@@ -18,7 +18,6 @@ body::-webkit-scrollbar {
 
 .primeira, .segunda {
     width: 100%;
-    height: 100vh;
     font-size: 2rem;
     transition: opacity 0.8s ease-out, transform 0.8s ease-out;
 }
@@ -60,7 +59,7 @@ body::-webkit-scrollbar {
 .backi{
     width: 100%;
     height: 100vh;
-    background-image: url(fundo-liso-estilo-papel_23-2148974875.jpg);
+    background-image: url(assets/fundo-liso-estilo-papel_23-2148974875.jpg);
     background-size: cover;
     z-index: -1;
     position: absolute;
@@ -71,7 +70,7 @@ body::-webkit-scrollbar {
 
 .carousel {
     position: relative;
-    width: 600px;
+    width: 850px;
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
@@ -100,6 +99,7 @@ body::-webkit-scrollbar {
 .primeira {
     background: linear-gradient(to bottom, #972c86, #fb5602);
     color: white;
+    height: 100vh;
     position: relative;
     z-index: 1;
     opacity: 1;
@@ -111,16 +111,20 @@ body::-webkit-scrollbar {
     background: rgba(255, 255, 255, 0.9);
     color: #333;
     position: relative;
+    height: 70vh;
     z-index: 2;
     opacity: 0;
     transform: translateY(50px);
 }
 .content2{
+    position: relative;
+    bottom: 30%;
     width: 100%;
     height: 100%;
-    background-color: red;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 /* Classe para mostrar a seção */
@@ -129,7 +133,6 @@ body::-webkit-scrollbar {
     transform: translateY(0);
 }
 
-/* Classe para esconder a seção */
 .hide {
     opacity: 0;
     transform: translateY(50px);

@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    padding: 0;
+    background: #fff;
+    font-family: Arial, sans-serif;
+}
+
+body::-webkit-scrollbar {
+    width: 8px;
+    background: #fff;
+  }
+  
+  body::-webkit-scrollbar-thumb {
+    background-color: #fb5602;
+    border-radius: 10px;
+ 
+  }
+
+.primeira, .segunda {
+    width: 100%;
+    height: 100vh;
+    font-size: 2rem;
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.header{
+    width: 100%;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+}
+.sp1{
+    width: 500px;
+    height: 100%;
+}
+.logo{
+    width: 200px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+   
+}
+.sp2{
+    width: 500px;
+    height: 100%;
+}
+
+.content{
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+.content h1{
+    margin-bottom: 200px;
+    font-size: 100px;
+    text-shadow: #333;
+}
+.backi{
+    width: 100%;
+    height: 100vh;
+    background-image: url(fundo-liso-estilo-papel_23-2148974875.jpg);
+    background-size: cover;
+    z-index: -1;
+    position: absolute;
+    opacity: 0.1;
+}
+
+/* carrosel */
+
+.carousel {
+    position: relative;
+    width: 600px;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.carousel img {
+    width: 100%;
+    display: none;
+}
+.carousel img.active {
+    display: block;
+}
+.carousel button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+.prev { left: 10px; }
+.next { right: 10px; }
+
+/* Primeira Seção */
+.primeira {
+    background: linear-gradient(to bottom, #972c86, #fb5602);
+    color: white;
+    position: relative;
+    z-index: 1;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Segunda Seção */
+.segunda {
+    background: rgba(255, 255, 255, 0.9);
+    color: #333;
+    position: relative;
+    z-index: 2;
+    opacity: 0;
+    transform: translateY(50px);
+}
+.content2{
+    width: 100%;
+    height: 100%;
+    background-color: red;
+    display: flex;
+    justify-content: center;
+}
+
+/* Classe para mostrar a seção */
+.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Classe para esconder a seção */
+.hide {
+    opacity: 0;
+    transform: translateY(50px);
+}

@@ -42,20 +42,37 @@ document.addEventListener("DOMContentLoaded", function () {
 // <-------------------------------------------------------------------------->
 
 let currentIndex = 0;
-        const images = document.querySelectorAll(".carousel img");
+const images = document.querySelectorAll(".carousel img");
+const intervalTime = 7000; 
+let slideInterval;
 
-        function showSlide(index) {
-            images.forEach((img, i) => {
-                img.classList.toggle("active", i === index);
-            });
-        }
+function showSlide(index) {
+    images.forEach((img, i) => {
+        img.classList.toggle("active", i === index);
+    });
+}
 
-        function prevSlide() {
-            currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
-            showSlide(currentIndex);
-        }
+function prevSlide() {
+    currentIndex = (currentIndex === 0) ? images.length - 1 : currentIndex - 1;
+    showSlide(currentIndex);
+    resetTimer();
+}
 
-        function nextSlide() {
-            currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
-            showSlide(currentIndex);
-        }
+function nextSlide() {
+    currentIndex = (currentIndex === images.length - 1) ? 0 : currentIndex + 1;
+    showSlide(currentIndex);
+    resetTimer();
+}
+
+function startSlideShow() {
+    slideInterval = setInterval(nextSlide, intervalTime);
+}
+
+function resetTimer() {
+    clearInterval(slideInterval);
+    startSlideShow();
+}
+
+// Iniciar o carrossel automaticamente
+startSlideShow();
+

@@ -70,14 +70,18 @@ body::-webkit-scrollbar {
 
 .carousel {
     position: relative;
-    width: 850px;
     margin: auto;
     overflow: hidden;
     border-radius: 10px;
+    transform: scale(1.1);
 }
+
 .carousel img {
     width: 100%;
+    height: auto;
+    max-height: 500px; /* Ajuste conforme necessário */
     display: none;
+    object-fit: cover;
 }
 .carousel img.active {
     display: block;
@@ -95,6 +99,16 @@ body::-webkit-scrollbar {
 .prev { left: 10px; }
 .next { right: 10px; }
 
+.sub-content{
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: linear-gradient(to left, #972c853f, #fb55024d);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+    
+}
 /* Primeira Seção */
 .primeira {
     background: linear-gradient(to bottom, #972c86, #fb5602);
@@ -136,4 +150,73 @@ body::-webkit-scrollbar {
 .hide {
     opacity: 0;
     transform: translateY(50px);
+}
+
+.card {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    transform: scale(1.2);
+    background: linear-gradient(-45deg, #972c86 0%, #fb5602 100% );
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card img {
+    width: 80px;
+    opacity: 0.9;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card:hover {
+    transform: rotate(-5deg) scale(1.1);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+  }
+  
+  .card__content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    width: 100%;
+    height: 100%;
+    padding: 20px;
+    box-sizing: border-box;
+    background-color: #fff;
+    opacity: 0;
+    transition: all 0.6s cubic-bezier(0.23, 1, 0.320, 1);
+  }
+  
+  .card:hover .card__content {
+    transform: translate(-50%, -50%) rotate(0deg);
+    opacity: 1;
+  }
+  
+  .card__title {
+    margin: 0;
+    font-size: 24px;
+    color: #333;
+    font-weight: 700;
+  }
+  
+  .card__description {
+    margin: 10px 0 0;
+    font-size: 14px;
+    color: #777;
+    line-height: 1.4;
+  }
+  
+  .card:hover svg {
+    scale: 0;
+    transform: rotate(-45deg);
+  }
+.rightC{
+    right: 100px;
+}
+.leftC{
+    left: 100px;
 }
